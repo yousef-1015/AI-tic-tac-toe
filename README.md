@@ -1,140 +1,77 @@
-# Tic-Tac-Toe AI with Alpha-Beta Pruning and Machine Learning
+# 🎮 Tic-Tac-Toe AI
 
-An intelligent Tic-Tac-Toe game featuring AI that uses Alpha-Beta pruning with two evaluation methods: classical heuristic and machine learning.
+An intelligent Tic-Tac-Toe game powered by **Alpha-Beta pruning** with two evaluation strategies: classical heuristics and machine learning.
+<img width="1061" height="649" alt="image" src="https://github.com/user-attachments/assets/dd980ec6-b578-455d-aefd-413196600225" />
 
-## Features
 
-### ✅ Complete Implementation
+## ✨ Features
 
-1. **Game Environment**
-   - 3×3 Tic-Tac-Toe board
-   - Legal move generation
-   - Terminal state detection (win/loss/draw)
+- **Smart AI** - Uses Alpha-Beta pruning for optimal move selection
+- **Dual Evaluation** - Choose between classical heuristic or ML-based evaluation
+- **Three Difficulty Levels** - Easy, Normal, and Hard (unbeatable)
+- **Real-time Analysis** - Watch the AI evaluate each possible move
+- **Clean Interface** - Simple, modern GUI built with Tkinter
 
-2. **Alpha-Beta Search**
-   - Minimax with Alpha-Beta pruning optimization
-   - Configurable search depth
-   - Supports custom evaluation functions
+## 🚀 Quick Start
 
-3. **Two Evaluation Functions**
-   - **Classical Heuristic**: Hand-coded evaluation considering:
-     - Immediate wins and blocks (high priority)
-     - Potential winning lines
-     - Center control bonus
-     - Corner control bonus
-   
-   - **Machine Learning**: Linear regression model trained on dataset with features:
-     - X and O piece counts
-     - Near-win positions (2-in-a-row)
-     - Center occupation
-     - Corner occupation
-     - Labels: +1 for X wins, -1 for O wins
-
-4. **Difficulty Levels**
-   - **Easy**: Depth 2, 35% random moves
-   - **Normal**: Depth 4, 15% random moves
-   - **Hard**: Depth 9 (perfect play), no mistakes
-
-5. **User Interface**
-   - Clean, modern GUI using Tkinter
-   - Choose to play as X or O
-   - Select difficulty level
-   - Choose evaluation function (Classical or ML)
-   - Real-time AI analysis display showing:
-     - Raw evaluation scores for each move
-     - Alpha-Beta search scores
-     - Chosen move and reasoning
-
-## Files
-
-- `main.py` - Main GUI application and game loop
-- `board.py` - Board representation and game logic
-- `alphabeta.py` - Alpha-Beta pruning implementation
-- `heuristic.py` - Classical evaluation function
-- `ml_model.py` - Linear regression model (from scratch)
-- `trainer.py` - ML model training script
-- `tictactoe_dataset.csv` - Training dataset (2015 samples)
-
-## Requirements
-
-```
-Python 3.7+
-pandas
-tkinter (usually included with Python)
-```
-
-## Installation
-
-1. Install Python dependencies:
+### Prerequisites
 ```bash
+Python 3.7+
 pip install pandas
 ```
 
-2. Run the game:
+### Run the Game
 ```bash
 python main.py
 ```
 
-## How to Play
-
-1. **Select your settings**:
-   - Choose your piece (X or O)
-   - Select difficulty (Easy/Normal/Hard)
-   - Choose evaluation method (Classical/ML)
-
-2. **Play the game**:
-   - Click any empty cell to make your move
-   - Watch the AI analyze its options
-   - See evaluation scores in the analysis panel
-
-3. **AI Analysis Panel** shows:
-   - Raw evaluation scores for each possible move
-   - Alpha-Beta search scores (looking ahead)
-   - Which move the AI selected and why
-
-## AI Implementation Details
+## 🎯 How It Works
 
 ### Alpha-Beta Pruning
-- Optimizes minimax search by pruning branches
-- Returns higher scores for faster wins
-- Terminal states: +1000 for win, -1000 for loss, 0 for draw
+Optimized minimax algorithm that prunes unnecessary branches in the game tree, making the AI faster while maintaining perfect play at high difficulty.
 
 ### Classical Heuristic
-- Prioritizes immediate wins (score: +50)
-- Blocks opponent near-wins (score: -40)
-- Values center position (+3) and corners (+2)
+Hand-crafted evaluation considering:
+- Immediate wins and blocks (highest priority)
+- Two-in-a-row threats
+- Center and corner control
 
-### Machine Learning Model
-- Custom linear regression (no AI libraries)
-- Trained with gradient descent
-- 200 epochs, learning rate 0.01
-- 6 features extracted from board state
+### Machine Learning
+Linear regression model trained on 2000+ game positions with features like piece counts, near-win states, and strategic positions.
 
-## Project Structure
+## 🎲 Difficulty Levels
+
+| Level  | Search Depth | Random Moves | Strength      |
+|--------|--------------|--------------|---------------|
+| Easy   | 2            | 35%          | Beatable      |
+| Normal | 4            | 15%          | Challenging   |
+| Hard   | 9            | 0%           | Unbeatable    |
+
+## 📁 Project Structure
 
 ```
-AI project/
-├── main.py              # GUI and game controller
-├── board.py             # Board logic
-├── alphabeta.py         # Search algorithm
-├── heuristic.py         # Classical evaluation
-├── ml_model.py          # ML model class
-├── trainer.py           # Model training
-├── tictactoe_dataset.csv # Training data
-└── README.md           # This file
+├── main.py                  # GUI and game controller
+├── board.py                 # Board logic and rules
+├── alphabeta.py             # Search algorithm
+├── heuristic.py             # Classical evaluation
+├── ml_model.py              # Linear regression model
+├── trainer.py               # Model training script
+├── tictactoe_dataset.csv    # Training data (2015 samples)
+└── README.md
 ```
 
-## Notes
+## 🛠️ Built With
 
-- All AI components (Alpha-Beta, heuristic, ML model) are implemented from scratch
-- No external AI libraries used (scikit-learn, tensorflow, etc.)
-- Only pandas is used for CSV reading (allowed non-AI library)
-- Hard difficulty provides perfect play (unbeatable when going first)
+- **Python** - Core language
+- **Tkinter** - GUI framework
+- **Pandas** - CSV data handling
+- **Custom ML** - Linear regression implemented from scratch
 
-## Author
+## 📝 Notes
 
-Created as a university AI project demonstrating:
-- Game tree search algorithms
-- Evaluation function design
-- Machine learning from scratch
-- GUI development
+All AI components (Alpha-Beta, evaluation functions, ML model) are implemented from scratch without external AI libraries like scikit-learn or TensorFlow.
+
+
+---
+
+**Enjoy the game! 🎉**
