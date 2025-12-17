@@ -17,7 +17,7 @@ An intelligent Tic-Tac-Toe game powered by **Alpha-Beta pruning** with two evalu
 ### Prerequisites
 ```bash
 Python 3.7+
-pip install pandas
+pip install customtkinter pandas pygame
 ```
 
 ### Run the Game
